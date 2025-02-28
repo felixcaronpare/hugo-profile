@@ -44,6 +44,7 @@
             </div>
             {{ end }}
             {{ range ( where .Site.RegularPages "Type" "projects" ) }}
+            {{ if ne .Params.list "never" }}
             {{ if .Params.showInHome | default true }}
             <div class="col-lg-4 col-md-6 my-3">
                 <div class="card my-3 h-100" title="{{ .Title }}">
@@ -77,6 +78,7 @@
                     </div>
                 </div>
             </div>
+            {{ end }}
             {{ end }}
             {{ end }}
         </div>
